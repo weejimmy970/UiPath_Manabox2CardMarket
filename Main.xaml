@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1228,849" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1228,2009" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -25,6 +25,19 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -65,14 +78,169 @@
       <AssemblyReference>System.ComponentModel</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="450,196" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap:VirtualizedContainerService.HintSize="738,1944" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="_out_SelectFile_1__SelectedFile" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="388,85" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Hello World&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: List Mixed Products | Cardmarket" sap:VirtualizedContainerService.HintSize="676,1833" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="4975a465-b83f-4d3e-808a-db79d745cf1e" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="642,1616" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:SelectFile DisplayName="Browse For File" Filter="Excel|*.xlsx;*.xls;*.xlsm;*.xlsb" sap:VirtualizedContainerService.HintSize="580,138" sap2010:WorkflowViewState.IdRef="SelectFile_1" SelectedFile="[_out_SelectFile_1__SelectedFile]" />
+            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="580,1323" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="[_out_SelectFile_1__SelectedFile]">
+              <ueab:ExcelApplicationCard.Body>
+                <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="ManaBox_Output" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="546,1054" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ueab:ExcelForEachRowX Range="{x:Null}" DisplayName="For Each Excel Row" EmptyRowBehavior="Stop" HasHeaders="True" sap:VirtualizedContainerService.HintSize="484,939" sap2010:WorkflowViewState.IdRef="ExcelForEachRowX_1" SaveAfterEachRow="False">
+                      <ueab:ExcelForEachRowX.Body>
+                        <ActivityAction x:TypeArguments="ue:CurrentRowQuickHandle, x:Int32">
+                          <ActivityAction.Argument1>
+                            <DelegateInArgument x:TypeArguments="ue:CurrentRowQuickHandle" Name="CurrentRow" />
+                          </ActivityAction.Argument1>
+                          <ActivityAction.Argument2>
+                            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                          </ActivityAction.Argument2>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,749" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="388,179" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(home)][u(hk)]" Version="V3" />
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="4975a465-b83f-4d3e-808a-db79d745cf1e" Version="V3">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.cardmarket.com/en/Magic/Stock/ListingMethods/ListMixedProducts" CvElementArea="165, 336, 405, 38" CvType="InputBox" DesignTimeRectangle="166, 382, 402, 36" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Cultivate'" FullSelectorArgument="&lt;webctrl id='ProductNameInput' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ProductNameInput' tag='INPUT' type='text' class='form-control' aaname='' /&gt;" Guid="8c922aae-d2ee-43b6-8443-fc9374a36c14" InformativeScreenshot="e277967092c937565a3e67b66a112a92.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='List Mixed Products | Cardmarket' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                      <uix:Target CvElementArea="165, 336, 405, 38" CvType="InputBox" DesignTimeRectangle="166, 352, 402, 23" ElementType="Text" FriendlyName="'Name'" FullSelectorArgument="&lt;webctrl parentid='ProductSearchForm' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ProductSearchForm' tag='LABEL' type='' class='form-label col-4 col-lg-12' aaname='Name' check:innerText='Name' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAZYAAAAbCAYAAABfoakkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAP5SURBVHhe7Z3djuNEEIXzKlxwwfu/D6DdZZaZOM6AkIAr4+P2yZTLf52YQbvs90m1cVdVV3evJR917HhO19fX7vp67X788NQd4bvvf5hYLTW599QDAID/HmnIpW279tp2J/2jxqPCsiQkR4XlvYXkvesDAHxrWFhkJx8cEZYjICwAAF8/0pDmEoRFjUeEpeYCvSccOa52NPtMPI7knGiR2hgAANQjDTk3zaAnh74Kq7kAL+VE315cvHdb1OQAAMAy0hBpyXCPpblcvqgdi8i+e9uZR/rv1QQAgDfehOV67B5LzcV376Jdc1G/ty3kixZZai8ZAADUYWGR9TuW/uAr27EI+5Zy9/rvtQEA4D6kIefm0jW9/SuPG2+xFI++vbjYyrkn19T0AQCAeiY7luHgwR2L0EV560Kd40vtTPZt5ezlqn1vTo4DAMA20hDdX2klLPrVvXYtjwqL8IU5WiT7YzznmrX8yF7frf4xLtzOfgAA2EcaIj2RnaQuR74KAwAAGHYso54cetwYAABASEOsJyfdX2HHAgAARxiERU+F9eJy+F1hAAAA0hDrCcICAACHsbDcdixHnwoDAIBvm9uOZbjHMioMwgIAAI8y2bHoDr4Ofv74ufvzr7/HFAAAgDqkHdKQ4ZUuRVjK42Gfnp6753M7pgEAANTxfL4MGqK/xyJxud28f+kdP3186n77/Y8xFQAAYBtphrRDGlI2KqOw6EBK8+vLeUiQ+vC1GAAArCGNeGnaQTOkHdqplB1L052uemnY+IZjmYKfPr8M35fpZgyGYRiGZZNG/NJrRdNebvrhH9wPr83X+138d1m0eymfb0kSH33qV5VSoxhXu/j7LZAs9Y/x4p/X9/j63JpPjMfxir+8VTPXd3u+jul8XM/zzf1jvPjn9T3+3nxiPI5X/K4zre/2fB2cj+Kf1/f4e/OJ8The8bvOtL7b83VwPop/Xt/j780nxuN4xe860/puz9fB+Sj+eX2PvzefGI/jFb/rTOsXYelNA9nU9luP43HMsamQTW33iZZjsX82xePYOWZfHDPHoo91zC3HYv9sirOOeT7rmFuOxf7ZFGcd8/z/yzrKDyR7GxRn+CwK5QTH9en4TdH69kQxx5zYf5iIFc4TCP1zvTj+WlztQZFVe2wr5vGcn+e/Nf5aPfdXvuM184vjr8XVXvv/i/l5/lvjcz7exsvtmvVyPnob4zX13F/5jtfML46/Fleb89HbGK+p5/7Kd7xmfnH8tbjatefj9lSYit4KL5g62NTO+TqW4m2prPvkOmv9Yl62tZjHyH6b+7lvztcx62Ad2e8xst/mfu6b83XMOlhH9nuM7Le5n/vmfB1/eetou38A4RsuaHSGni8AAAAASUVORK5CYII=" SearchSteps="FuzzySelector, CV" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NTypeInto.Target>
+                            </uix:NTypeInto>
+                            <uix:NSelectItem Item="{x:Null}" DisplayName="Select Item 'Expansion'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NSelectItem_1" ScopeIdentifier="4975a465-b83f-4d3e-808a-db79d745cf1e" Version="V3">
+                              <uix:NSelectItem.Items>
+                                <scg:List x:TypeArguments="x:String" Capacity="50">
+                                  <x:String>All</x:String>
+                                  <x:String>2005 Player Cards</x:String>
+                                  <x:String>2006 Player Cards</x:String>
+                                  <x:String>2007 Player Cards</x:String>
+                                  <x:String>2023 Lunar New Year Promos</x:String>
+                                  <x:String>30th Anniversary Celebration</x:String>
+                                  <x:String>30th Anniversary Edition</x:String>
+                                  <x:String>30th Anniversary History Promos</x:String>
+                                  <x:String>Aaron Miller Tokens</x:String>
+                                  <x:String>Adventures in the Forgotten Realms</x:String>
+                                  <x:String>Adventures in the Forgotten Realms: Extras</x:String>
+                                  <x:String>Adventures in the Forgotten Realms: Promos</x:String>
+                                  <x:String>Aether Revolt</x:String>
+                                  <x:String>Aether Revolt: Promos</x:String>
+                                  <x:String>Alara Reborn</x:String>
+                                  <x:String>Alliances</x:String>
+                                  <x:String>Alpha</x:String>
+                                  <x:String>ALRadeck Tokens</x:String>
+                                  <x:String>Amaranth Alchemy Tokens</x:String>
+                                  <x:String>Amonkhet</x:String>
+                                  <x:String>Amonkhet Invocations</x:String>
+                                  <x:String>Amonkhet: Promos</x:String>
+                                  <x:String>Andrew Thompson Tokens</x:String>
+                                  <x:String>Angelarium Tokens</x:String>
+                                  <x:String>Anthologies</x:String>
+                                  <x:String>Anthony Christou Tokens</x:String>
+                                  <x:String>Antiquities</x:String>
+                                  <x:String>APAC Lands</x:String>
+                                  <x:String>Apocalypse</x:String>
+                                  <x:String>Arabian Nights</x:String>
+                                  <x:String>Archenemy</x:String>
+                                  <x:String>Archenemy: Nicol Bolas</x:String>
+                                  <x:String>Arena League Promos</x:String>
+                                  <x:String>Armada Comics</x:String>
+                                  <x:String>Avacyn Restored</x:String>
+                                  <x:String>Battle for Zendikar</x:String>
+                                  <x:String>Battle for Zendikar: Promos</x:String>
+                                  <x:String>Battle Royale</x:String>
+                                  <x:String>Battlebond</x:String>
+                                  <x:String>Battlebond: Promos</x:String>
+                                  <x:String>Beatdown</x:String>
+                                  <x:String>Beta</x:String>
+                                  <x:String>Betrayers of Kamigawa</x:String>
+                                  <x:String>Born of the Gods</x:String>
+                                  <x:String>Buy a Box Promos</x:String>
+                                  <x:String>Card Game Tokens</x:String>
+                                  <x:String>Cardamajigs Tokens</x:String>
+                                  <x:String>Cardmarket Tokens</x:String>
+                                  <x:String>CardZ Promos</x:String>
+                                  <x:String>Cats &amp; Cantrips Tokens</x:String>
+                                </scg:List>
+                              </uix:NSelectItem.Items>
+                              <uix:NSelectItem.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.cardmarket.com/en/Magic/Stock/ListingMethods/ListMixedProducts" CvTextArea="176, 635, 251, 17" CvTextArgument="Commander: Streets of New Capenna" CvType="Text" DesignTimeRectangle="166, 624, 402, 36" DesignTimeScaleFactor="1" ElementType="DropDown" FriendlyName="'Commander: Streets'" FullSelectorArgument="&lt;webctrl name='idExpansion' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl name='idExpansion' tag='SELECT' type='' class='form-select' aaname='' /&gt;" Guid="c65f881f-2df8-4ce9-b96a-34ac00081225" InformativeScreenshot="fb5d97a1498a2f5a015cfd0d5dcd2c7d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='List Mixed Products | Cardmarket' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                      <uix:Target CvTextArea="165, 598, 71, 17" CvTextArgument="Expansion" CvType="Text" DesignTimeRectangle="166, 594, 402, 23" ElementType="Text" FriendlyName="'Expansion'" FullSelectorArgument="&lt;webctrl aaname='Expansion' parentid='ProductSearchForm' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Expansion' parentid='ProductSearchForm' tag='LABEL' type='' class='form-label col-4 col-lg-12' check:innerText='Expansion' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, CV" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NSelectItem.Target>
+                            </uix:NSelectItem>
+                          </Sequence>
+                        </ActivityAction>
+                      </ueab:ExcelForEachRowX.Body>
+                    </ueab:ExcelForEachRowX>
+                  </Sequence>
+                </ActivityAction>
+              </ueab:ExcelApplicationCard.Body>
+            </ueab:ExcelApplicationCard>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-1608, -8, 1616, 916" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="d195481fae4a58fab9d9503b92953c36.jpg" Selector="&lt;html app='chrome.exe' title='List Mixed Products | Cardmarket' /&gt;" Title="List Mixed Products | Cardmarket" Url="https://www.cardmarket.com/en/Magic/Stock/ListingMethods/ListMixedProducts" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
   </Sequence>
 </Activity>
